@@ -112,13 +112,16 @@ def mark_sold():
     print(rec)
     time.sleep(1.5)
     print("\n")
-    y_n = input("Want to mark another book as sold : ")
-    if y_n == y or Y:
-        
-
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to mark another book as sold (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        mark_sold()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def all_b_details():
     my_curser.execute("select * from " +book_details)
@@ -132,6 +135,7 @@ def all_b_details():
     print("\n")
     main()
 
+
 def search_by_b_id():
     b_id = input("Enter Book ID for the book : ")
     my_curser.execute('select * from ' +book_details+ ' where b_id = " ' + b_id + '"' )
@@ -141,9 +145,16 @@ def search_by_b_id():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search another book (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_b_id()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_by_b_name():
     b_id = input("Enter Book Name : ")
@@ -154,9 +165,16 @@ def search_by_b_name():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search another book (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_b_name()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_by_ISBN():
     b_id = input("Enter ISBN of the book : ")
@@ -167,9 +185,16 @@ def search_by_ISBN():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search another book (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_ISBN()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_by_publ():
     b_id = input("Enter publication of the book : ")
@@ -180,9 +205,16 @@ def search_by_publ():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search book of another publication (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_publ()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_by_writer():
     b_id = input("Enter Writer of the book : ")
@@ -193,9 +225,16 @@ def search_by_writer():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search book of another writer (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_writer()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_by_genre():
     b_id = input("Enter genre : ")
@@ -206,9 +245,16 @@ def search_by_genre():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search book o another genre (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_by_genre()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def search_in_price_range():
     u_lim = int (input("Enter upper limit for search : "))
@@ -220,9 +266,16 @@ def search_in_price_range():
         # print("\n")
     time.sleep(1.5)
     print("\n")
-    E = input("Press Enter to naviagte to MAIN MENU.")
-    print("\n")
-    main()
+    y_n = input("Want to search again (Y/N) ? : ")
+    if y_n == "y" or "Y":
+        search_in_price_range()
+    elif y_n == "n" or "N":
+        main()
+    else:
+        print("Dont you have eyes ? ")
+        E = input("Press Enter to naviagte to MAIN MENU.")
+        print("\n")
+        main()
 
 def shorted_book():
     l_lim = int (input("Enter lower limit no. for a book in stock : "))
