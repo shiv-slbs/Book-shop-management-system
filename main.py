@@ -122,6 +122,10 @@ def add_new():
     mydb.commit()
     time.sleep(1.5)
     print("\n")
+    print("Data Added")
+    E=input("Hit Enter to continue ....!")
+    time.sleep(1)
+    main()
     
 def mark_sold():
     b_id = input("Enter Book ID of the book : ")
