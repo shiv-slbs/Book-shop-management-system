@@ -55,55 +55,74 @@ def main ():
     ------------------------------------------------
     1. Mark a book as sold
     ------------------------------------------------
-    2. Show all books details available
+    2.Add new book data
     ------------------------------------------------
-    3. Search book details by it's Book ID
+    3. Show all books details available
     ------------------------------------------------
-    4. Search book details by it's name 
+    4. Search book details by it's Book ID
     ------------------------------------------------
-    5. Search book details by it's ISBN
+    5. Search book details by it's name 
     ------------------------------------------------
-    6. Show all books of a publication
+    6. Search book details by it's ISBN
     ------------------------------------------------
-    7. Show all books of a writer
+    7. Show all books of a publication
     ------------------------------------------------
-    8. Show all books of a genre
+    8. Show all books of a writer
     ------------------------------------------------
-    9. Show all books in a price range
+    9. Show all books of a genre
     ------------------------------------------------
-    10. Show all books which are left a few in stock
+    10. Show all books in a price range
     ------------------------------------------------
-    11. EXIT
+    11. Show all books which are left a few in stock
+    ------------------------------------------------
+    12. EXIT
     
     ''')
     ch = input ("Enter no. according to your execution : ")
     match ch:
-        case '2':
+        case '1':
             mark_sold()
         case '2':
-            all_b_details()
+            add_new()
         case '3':
-            search_by_b_id()
+            all_b_details()
         case '4':
-            search_by_b_name()
+            search_by_b_id()
         case '5':
-            search_by_ISBN()
+            search_by_b_name()
         case '6':
-            search_by_publ()
+            search_by_ISBN()
         case '7':
-            search_by_writer()
+            search_by_publ()
         case '8':
-            search_by_genre()
+            search_by_writer()
         case '9':
-            search_in_price_range()
+            search_by_genre()
         case '10':
-            shorted_book()
+            search_in_price_range()
         case '11':
+            shorted_book()
+        case '12':
             exit()
         case other:
             print("Use the programme wisely, dont't be stupid..!")
             main()
 
+def add_new():
+    b_id = input("Enter Book ID : ")
+    b_name = input("Enter Book name : ")
+    pub = input("Enter publication : ")
+    isbn = input("Enter ISBN no. : ")
+    gen = input("Enter Book genre : ")
+    writer = input("Enter Writer of Book : ")
+    no_b_left = int(input("Enter no. of Book left in stock : "))
+    pric = int(input("Enter price of one Book : "))
+    data_to_add_book = ( b_id , b_name , pub , isbn, gen , writer, no_b_left, pric )
+    my_curser.execute("INSERT INTO " +book_details+ " VALUES (%s, %s, %s, %s,%s , %s ,%i , %i )" , data_to_add_book)
+    mydb.commit()
+    time.sleep(1.5)
+    print("\n")
+    
 def mark_sold():
     b_id = input("Enter Book ID of the book : ")
     n = int(input("Enter the number of book sold : "))
